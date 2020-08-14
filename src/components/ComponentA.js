@@ -13,8 +13,6 @@ const ComponentA = () => {
             })
     }, []);
 
-    console.log(data, 'dataの確認');
-
     return (
         <div>
             <div>ComponentA</div>

@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ADD_EVENT, DELETE_ALL_EVENT } from '../actions/index';
+import { ADD_EVENT, DELETE_ALL_EVENT, DELETE_ONE_EVENT } from '../actions/index';
 import reducer from '../reducers/index';
 import { Button, Form, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,6 +29,12 @@ const ComponentB = () => {
             type: DELETE_ALL_EVENT
         });
     };
+    const delete_one_event = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: DELETE_ONE_EVENT
+        });
+    }
 
     return (
         <div>
@@ -86,7 +92,7 @@ const ComponentB = () => {
                                 <td>{data.body}</td>
                                 <td>{data.comment}</td>
                                 <td>
-                                    <Button variant="danger">削除</Button>
+                                    <Button variant="danger" onClick={delete_one_event}>削除</Button>
                                 </td>
                             </tr>
                         );

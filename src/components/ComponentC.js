@@ -6,7 +6,6 @@ const initialCount = {
     count: 0
 };
 
-
 const ComponentC = () => {
     const [state, dispatch] = useReducer(reducer, initialCount);
 
