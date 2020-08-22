@@ -17,24 +17,19 @@ const ComponentB = () => {
             type: ADD_EVENT,
             title,
             body,
-            comment
+            comment,
         });
         setTitle('');
         setBody('');
         setComment('');
     };
+
     const delete_All_event = (e) => {
         e.preventDefault();
         dispatch({
             type: DELETE_ALL_EVENT
         });
     };
-    const delete_one_event = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: DELETE_ONE_EVENT
-        });
-    }
 
     return (
         <div>
@@ -85,9 +80,16 @@ const ComponentB = () => {
                 </thead>
                 <tbody>
                     {state.map((data, index) => {
+                        const id = data.id;
+                        const delete_one_event = () => {
+                            dispatch({
+                                type: DELETE_ONE_EVENT,
+                                id
+                            });
+                        };
                         return (
                             <tr key={index}>
-                                <td>{data.id}</td>
+                                <td>{id}</td>
                                 <td>{data.title}</td>
                                 <td>{data.body}</td>
                                 <td>{data.comment}</td>

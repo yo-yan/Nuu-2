@@ -9,7 +9,8 @@ const reducer = (state = [], action) => {
         case DELETE_ALL_EVENT:
             return [];
         case DELETE_ONE_EVENT:
-            return [];
+            const result = state.filter((data) => data.id !== action.id);
+            return result;
         default:
             return state;
     }
