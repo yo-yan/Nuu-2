@@ -4,6 +4,7 @@ import { ADD_EVENT, DELETE_ALL_EVENT, DELETE_ONE_EVENT } from '../actions/index'
 import reducer from '../reducers/index';
 import { Button, Form, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import ComponentF from './ComponentF'
 
 const ComponentB = () => {
     const [state, dispatch] = useReducer(reducer, []);
@@ -35,6 +36,7 @@ const ComponentB = () => {
         <div>
             <div>ComponentB</div>
             <Link to="componentc">ComponentCへ移動</Link>
+            {/* <ComponentF /> */}
 
             <Form>
                 <Form.Group controlId="formBasicPassword">
