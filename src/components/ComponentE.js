@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Store } from '../store/index';
-import { INCREMENT, DECREMENT, RESET } from '../actions/index';
+import { INCREMENT, DECREMENT, RESET, EVENT } from '../actions/index';
 
 const ComponentE = () => {
     const { globalState, setGlobalState } = useContext(Store);
@@ -17,9 +17,15 @@ const ComponentE = () => {
         });
     };
     //0に戻る
-    const creaClick = () => {
+    const crearClick = () => {
         setGlobalState({
             type: RESET
+        });
+    };
+    //３の倍数時＋10
+    const eventClick = () => {
+        setGlobalState({
+            type: EVENT
         });
     };
 
@@ -29,7 +35,8 @@ const ComponentE = () => {
             <h1>ComponentE.js</h1>
             <button onClick={handleClick}>+1</button>
             <button onClick={downClick}>-1</button>
-            <button onClick={creaClick}>reset</button>
+            <button onClick={crearClick}>reset</button>
+            <button onClick={eventClick}>+10</button>
         </div>
     );
 };
