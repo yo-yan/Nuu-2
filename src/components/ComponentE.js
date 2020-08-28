@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Store } from '../store/index';
 import { INCREMENT, DECREMENT, RESET, EVENT } from '../actions/index';
-import ComponentA from './ComponentA'
 
 const ComponentE = () => {
     const { globalState, setGlobalState } = useContext(Store);
@@ -38,7 +37,6 @@ const ComponentE = () => {
             <button onClick={downClick}>-1</button>
             <button onClick={crearClick}>reset</button>
             <button onClick={eventClick}>+10</button>
-            <ComponentA />
         </div>
 
     );
