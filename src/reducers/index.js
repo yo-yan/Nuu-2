@@ -19,13 +19,12 @@ const reducer = (state = [], action) => {
             return { ...state, count: 0 };
         case EVENT:
             if (state.count === 0) {
-
-            } else if (state.count === 3) {
+                return { ...state, count: state.count }
+            } else if (state.count % 3 === 0) {
                 return { ...state, count: state.count + 10 }
             } else {
-
+                return { ...state, count: state.count }
             }
-            break
         default:
             return state;
     }
